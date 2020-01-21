@@ -5,7 +5,7 @@ const Interface = (props) => {
     console.log("this is interface");
     return(
         <div>
-            interface
+            Click deal to start!
         </div>
     )
 }

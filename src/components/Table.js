@@ -12,8 +12,8 @@ const Table = () => {
     return(
         <div>
         <Interface />
-        <Hand />
-        <Hand />
+        <Hand person="dealer"/>
+        <Hand person="player"/>
         <Controls />            
         </div>
 

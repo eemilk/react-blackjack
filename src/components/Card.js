@@ -1,11 +1,11 @@
 import React from "react";
 import '.././index.css';
 
-const Card = () => {
+const Card = (props) => {
     console.log("this is card");
     return (
         <div className="card">
-            card
+            {props.card}
         </div>
     );
 }
