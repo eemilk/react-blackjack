@@ -4,7 +4,7 @@ import '.././index.css';
 const Interface = (props) => {
     console.log("this is interface");
     return(
-        <div>
+        <div className="interface">
             Click deal to start!
         </div>
     )

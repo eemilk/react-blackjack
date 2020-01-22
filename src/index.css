@@ -5,9 +5,30 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.interface {
+  padding-bottom: 20px;
+}
+
+.dealerCards {
+  padding-bottom: 50px;
+
+}
+
+.playerCards {
+  padding-bottom: 20px;
+
+}
+
+.card {
+  display:inline-block;
+}
+
+

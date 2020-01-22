@@ -5,6 +5,7 @@ const Card = (props) => {
     console.log("this is card");
     return (
         <div className="card">
+            {props.cardType}
             {props.card}
         </div>
     );

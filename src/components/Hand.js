@@ -1,25 +1,24 @@
-import React from 'react';
-import Card from "./Card"
-import '.././index.css';
+import React from "react";
+import Card from "./Card";
+import ".././index.css";
 
-const Hand = (props) => {
-    console.log("this is hand");
-    if (props.person == "player") {
-        return(
-            <div>
-                <Card card="playercard" />
-                <Card card="playercard" />
-            </div>
-        );        
-    } else {
-        return(
-            <div>
-                <Card card="dealercard" />
-                <Card card="dealercard" />
-            </div>
-        );    
-    }
-
-}
+const Hand = props => {
+  console.log("this is hand");
+  if (props.person == "dealer") {
+    return (
+      <div className="dealerCards">
+        <Card cardType="dealercard1" card={props.dealerDraftedCard1} />
+        <Card cardType="dealercard2" card={props.dealerDraftedCard2} />
+      </div>
+    );
+  } else {
+    return (
+      <div className="playerCards">
+        <Card cardType="playercard1" card={props.playerDraftedCard1}/>
+        <Card cardType="playercard2" card={props.playerDraftedCard2} />
+      </div>
+    );
+  }
+};
 
 export default Hand;

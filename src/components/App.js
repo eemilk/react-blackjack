@@ -13,6 +13,7 @@ const App = () => {
         <Table />
     );
 }
+console.log('')
 
 
 export default App;
