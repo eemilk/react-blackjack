@@ -7,9 +7,16 @@ import Interface from "./Interface.js";
 import Card from "./Card.js";
 import Controls from "./Controls.js"
 
-import CardImages from ".././cards"
+// Cards
+
 
 const Table = () => {
+
+    //imports all image files
+    function importAll(r) {
+        return r.keys().map(r);
+    }
+    const cards = importAll(require.context('.././cards/', false, /\.png/));
 
     const Deck = () => {
         const cardDeck = ["2C.png", "2D.png", "2H.png", "2S.png", "3C.png", "3D.png", "3H.png", "3S.png", "4C.png", "4D.png", "4H.png", "4S.png", "5C.png",
@@ -20,17 +27,17 @@ const Table = () => {
     }
     const draftCard = () => {
         // TODO! add deck shuffle, this function returns drafted card
-        return "JS.png"
+        return cards['JS.png'];
     }
     
     Deck();
     //TODO! add right logic to send draftedCardImage to display
-    let draftedCardImg = CardImages.src(".././cards/", draftCard());
+
     console.log("this is table");
     return(
         <div>
         <Interface />
-        <Hand person="dealer" dealerDraftedCard1={draftedCardImg} dealerDraftedCard2="" />
+        <Hand person="dealer" dealerDraftedCard1={draftCard()} dealerDraftedCard2="" />
         <Hand person="player" playerDraftedCard1="" playerDraftedCard2="" />
         <Controls />            
         </div>

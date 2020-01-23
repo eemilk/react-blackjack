@@ -31,4 +31,7 @@ code {
   display:inline-block;
 }
 
-
+.imgCard {
+  height: 200;
+  width: 100%;
+}

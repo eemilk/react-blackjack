@@ -4,11 +4,13 @@ import ".././index.css";
 
 const Hand = props => {
   console.log("this is hand");
+
+
   if (props.person == "dealer") {
     return (
       <div className="dealerCards">
-        <Card cardType="dealercard1" card={props.dealerDraftedCard1} />
-        <Card cardType="dealercard2" card={props.dealerDraftedCard2} />
+        <Card cardType="dealercard1" card1={props.dealerDraftedCard1} />
+        <Card cardType="dealercard2" card2={props.dealerDraftedCard2} />
       </div>
     );
   } else {
@@ -19,6 +21,8 @@ const Hand = props => {
       </div>
     );
   }
+
+  
 };
 
 export default Hand;
