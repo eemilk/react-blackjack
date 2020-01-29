@@ -1,13 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '.././index.css';
 
 //Components
 import Hand from "./Hand.js";
 import Interface from "./Interface.js";
-import Card from "./Card.js";
-import Controls from "./Controls.js"
-
-// Cards
 
 
 const Table = () => {
@@ -18,7 +14,7 @@ const Table = () => {
         r.keys().map((item, index) => { cards[item.replace('./', '')] = r(item); });
         return cards;
     }
-    const cards = importAll(require.context('.././cards/', false, /\.png/));
+    const cards = importAll(require.context('../cards/', false, /\.png/));
     // To call image refer it as cards["imagehere.png"]
 
     function makeDeck() {
@@ -49,15 +45,38 @@ const Table = () => {
     }
 
     const playDeck = shuffledDeck();
+    console.log(playDeck);
+    console.log(cards[playDeck[1]])
+
+    const GameEngine = () => {
+        const [draftedCard, draftCard] = useState(0);
+        
+
+
+        return (
+            <div>
+                <img src={cards[playDeck[draftedCard]]} alt=""
+                crop="fill" height="300" />
+
+                <Interface />
+                <Hand person="dealer" dealerDraftedCard1={cards[playDeck[draftedCard]]} dealerDraftedCard2="" />
+                <Hand person="player" playerDraftedCard1="" playerDraftedCard2="" />
+
+                <button>
+                    Deal</button>
+                <button onClick={() => draftCard(draftedCard + 1)}>
+                    Hit</button>
+                <button>
+                    Stand</button>
+            </div>
+    
+    
+        );    
+    }
     return (
         <div>
-            <Interface />
-            <Hand person="dealer" dealerDraftedCard1={playDeck[1]} dealerDraftedCard2="" />
-            <Hand person="player" playerDraftedCard1="" playerDraftedCard2="" />
-            <Controls />
+            <GameEngine />
         </div>
-
-
     );
 }
 
